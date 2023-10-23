@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {% block lightboxcss %}{% endblock  %}
+    <link rel="shortcut icon" href="{% static 'assets/images/django.ico' %}" type="image/x-icon">
+    <title>Condomínio</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemovillaagency.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url 'index' %}" class="logo">
+                        <h1>Condomínio</h1>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="{% url 'index'%}" class=" {% if pagename == 'index' %}active{% endif %} ">Home</a></li>
+                      <li><a href="{% url 'galery'%}" class=" {% if pagename == 'galery' %}active{% endif %} ">Galeria</a></li>
+                      <li><a href="{% url 'residents' %}" class=" {% if pagename == 'residents' %}active{% endif %} ">Moradores</a></li>
+                      <li><a href="{% url 'visitors' %}" class=" {% if pagename == 'visitors' %}active{% endif %} ">Visitantes</a></li>
+                      <li><a href="#" >Login</a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  {% block body %}{% endblock  %}
+  
+  <div class="contact section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h2>Entre Em Contato Conosco</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62222.972539681105!2d-38.576635379435295!3d-12.911848846027027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160f8a8142d751%3A0x5ef1058806170401!2sBonfim%2C%20Salvador%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1697634850459!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="item phone">
+                <img src="{% static 'assets/images/phone-icon.png' %}" alt="" style="max-width: 52px;">
+                <h6>(XX) XXXXX-XXXX<br><span>Telefone</span></h6>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="item email">
+                <img src="{% static 'assets/images/email-icon.png' %}" alt="" style="max-width: 52px;">
+                <h6>info@condominio.com<br><span>Email</span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <form id="contact-form" action="" method="post">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="name">Nome Completo</label>
+                  <input type="name" name="name" id="name" placeholder="Nome..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-mail..." required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="subject">Assunto</label>
+                  <input type="subject" name="subject" id="subject" placeholder="Assunto..." autocomplete="on" >
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="message">Menssagem</label>
+                  <textarea name="message" id="message" placeholder="Mensagem"></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Enviar Mensagem</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-8">
+        <p>2023 Condomínio, Salvador, Bahia. 
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/counter.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  {% block lightboxjs %}{% endblock  %}
+  </body>
+</html>
