@@ -9,14 +9,6 @@ def index(request):
     
     return render(request, 'condominio/index.html', context)
 
-def galery(request):
-    
-    context = {
-        'pagename': 'galery'
-    }
-    
-    return render(request, 'condominio/galery.html', context)
-
 def residents(request):
     avisos = Aviso.objects.all()[:10
                                  ]

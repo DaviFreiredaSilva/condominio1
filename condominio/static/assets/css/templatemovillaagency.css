@@ -1099,23 +1099,6 @@ Best Deal Style
   margin-top: 30px;
 }
 
-/* 
----------------------------------------------
-Lightbox Style
---------------------------------------------- 
-*/
-.lb-image{
-  width: 60vw!important;
-  height: auto!important;
-
-}
-
-/* 
----------------------------------------------
-Lightbox Style End
---------------------------------------------- 
-*/
-
 
 /* 
 ---------------------------------------------
@@ -1192,6 +1175,11 @@ Properties Style
 Contact Style
 --------------------------------------------- 
 */
+
+iframe{
+  width: 50vw;
+  height: 350px;
+}
 
 .contact {
   background-image: url(../images/contact-bg.jpg);
@@ -1694,6 +1682,12 @@ body {
 }
 
 @media (max-width: 992px) {
+
+  iframe{
+    width: 70vw;
+    height: 350px;
+  }
+
    .header-area .main-nav .logo h1 {
     line-height: 100px;
   }
