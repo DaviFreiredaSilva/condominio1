@@ -1,0 +1,30 @@
+{% extends 'condominio/base.html' %}
+{% load static %}
+{% block body %}
+<div class="admin-main-div">
+    <div class="container">
+        <div class="row">
+            <div class="properties section">
+                <div class="container ">
+                  <div class="row">
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                      <div class="item item-aviso d-flex flex-column p-4">
+                        <h6>Criar Aviso</h6>
+                        <hr>
+                        <form>
+                            <input type="text" name="title" class="form-control my-3" placeholder="Título">
+                            <input type="file" accept="image/*" name="image" class="form-control my-3" placeholder="Imagem (Opcional)">
+                            <textarea name="text" class="form-control my-3" cols="30" rows="10" placeholder="Texto do Aviso"></textarea>
+                            <button class="btn btn-outline-dark my-3">Salvar</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

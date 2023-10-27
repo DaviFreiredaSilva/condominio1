@@ -53,8 +53,9 @@
                     <ul class="nav">
                       <li><a href="{% url 'index'%}" class=" {% if pagename == 'index' %}active{% endif %} ">Home</a></li>
                       <li><a href="{% url 'residents' %}" class=" {% if pagename == 'residents' %}active{% endif %} ">Moradores</a></li>
-                      <li><a href="{% url 'visitors' %}" class=" {% if pagename == 'visitors' %}active{% endif %} ">Visitantes</a></li>
+                      <li><a href="{% url 'visitors'  %}" class=" {% if pagename == 'visitors' %}active{% endif %} ">Visitantes</a></li>
                       <li><a href="#" >Login</a></li>
+                      <li><a href="{% url 'config' %}" class=" {% if pagename == 'config' %}active{% endif %} "><i class="fa-solid fa-screwdriver-wrench"></i></a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>

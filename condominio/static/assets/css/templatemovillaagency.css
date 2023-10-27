@@ -428,7 +428,7 @@ Header Style
 }
 
 .header-area .main-nav .nav li:last-child:hover a i {
-  color: #fff;
+  color: #f35525;
 }
 
 .header-area .main-nav .nav li:hover a {
@@ -680,7 +680,7 @@ Banner Style
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 220px 20% 320px 20%;
+  padding: 220px 5% 320px 20%;
   margin-top: 0px;
 }
 
@@ -906,55 +906,6 @@ Featured Style
   font-weight: 400;
 }
 
-/* 
----------------------------------------------
-Video Style
---------------------------------------------- 
-*/
-
-.video {
-  background-image: url(../images/video-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  padding: 100px 0px 250px 0px;
-  position: relative;
-}
-
-.video-content {
-  margin-top: -240px;
-}
-
-.video .section-heading h2 {
-  color: #fff;
-}
-
-.video-content .video-frame {
-  position: relative;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-}
-
-.video-content .video-frame img {
-  border-radius: 10px;
-}
-
-.video-content .video-frame a {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-26px, -26px);
-  width: 52px;
-  height: 52px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: inline-block;
-  text-align: center;
-  line-height: 52px;
-  color: #f35525;
-  outline: 15px solid rgba(254, 85, 37, 0.5);
-  font-size: 18px;
-}
 
 /* 
 ---------------------------------------------
@@ -1108,7 +1059,6 @@ Properties Style
 
 .properties .item {
   background-color: #fafafa;
-  height:180px;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
@@ -1169,6 +1119,35 @@ Properties Style
   text-align: center;
 }
 
+/* 
+---------------------------------------------
+Config Style
+--------------------------------------------- 
+*/
+.admin-main-div{
+  background-color: #1e1e1e!important;
+  padding-bottom: 50px;
+}
+
+.properties .item-config {
+  height: 250px;
+}
+
+.properties .item-config:hover {
+  background-color: #aaaaaa;
+}
+
+.properties .item.aviso{
+  background-color: #aaaaaa;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+---------------------------------------------
+Config Style ends
+--------------------------------------------- 
+*/
 
 /* 
 ---------------------------------------------

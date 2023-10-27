@@ -25,3 +25,13 @@ def visitors(request):
     }
     
     return render(request, 'condominio/visitors.html', context)
+
+def config(request):
+    context = {
+        'pagename': 'config'
+    }
+
+    return render(request, 'condominio/config.html', context)
+
+def avisoEdit(request):
+    return render(request, 'condominio/aviso-edit.html')
