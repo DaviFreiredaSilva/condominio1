@@ -331,6 +331,7 @@ Header Style
 
 #logo{
   height: 180px;
+  width: 180px;
 }
 
 .background-header {
@@ -1647,6 +1648,7 @@ body {
 
   #logo{
     height: 100px;
+    width: 100px;
   }
 
   .header-area .main-nav .logo h1 {
