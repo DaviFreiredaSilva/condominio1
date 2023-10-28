@@ -1,0 +1,20 @@
+{% extends 'condominio/base.html' %}
+{% block body %}
+   <div class="aviso-details-div">
+    <div class="row">
+        <hr>
+        <h1 class="text-center mb-4">{{aviso.titulo}}</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 p-4">
+            <p class="fw-bold fs-3">{{aviso.texto}}</p>
+        </div>
+        <div class="col-lg-6 p-4">
+            {% if aviso.imagem %}
+                <img src="{{aviso.imagem.url}}" alt="imagem">
+            {% endif %}
+        </div>
+    </div>
+   </div>
+{% endblock  %}

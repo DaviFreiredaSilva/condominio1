@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from condominio import views
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
@@ -10,6 +12,8 @@ urlpatterns = [
     path('visitors', views.visitors, name='visitors'),
     path('config', views.config, name='config'),
     path('avisoEdit', views.avisoEdit, name='avisoEdit'),
+    path('avisoDetails/<int:id>', views.avisoDetails, name='avisoDetails'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -171,7 +171,7 @@ body {
 }
 
 .icon-button a i {
-  background-color: #f35525;
+  background-color: #B12D58;
   height: 50px;
   width: 50px;
   text-align: center;
@@ -183,7 +183,7 @@ body {
 }
 
 .icon-button a:hover {
-  color: #f35525;
+  color: #B12D58;
 }
 
 .icon-button a:hover i {
@@ -217,7 +217,7 @@ body {
 }
 
 .main-button a:hover {
-  background-color: #f35525;
+  background-color: #B12D58;
   color: #fff;
 }
 
@@ -294,7 +294,7 @@ Pre-loader Style
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #f35525;
+  background: #B12D58;
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -317,7 +317,7 @@ Pre-loader Style
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #f35525;
+  background: #B12D58;
   border-radius: 50%;
 }
 
@@ -328,6 +328,10 @@ Pre-loader Style
 Header Style
 --------------------------------------------- 
 */
+
+#logo{
+  height: 180px;
+}
 
 .background-header {
   background-color: #fff;
@@ -428,20 +432,20 @@ Header Style
 }
 
 .header-area .main-nav .nav li:last-child:hover a i {
-  color: #f35525;
+  color: #B12D58;
 }
 
 .header-area .main-nav .nav li:hover a {
-  color: #f35525;
+  color: #B12D58;
 }
 
 .header-area .main-nav .nav li a.active {
-  color: #f35525;
+  color: #B12D58;
 }
 
 
 .background-header .main-nav .nav li a.active {
-  color: #f35525;
+  color: #B12D58;
 }
 
 .header-area .main-nav .menu-trigger {
@@ -724,7 +728,7 @@ Banner Style
 
 .main-banner .item span.category em {
   font-style: normal;
-  color: #f35525;
+  color: #B12D58;
 }
 
 .main-banner .item h2 {
@@ -753,7 +757,7 @@ Banner Style
 }
 
 .main-banner .owl-dots .active {
-  background-color: #f35525;
+  background-color: #B12D58;
 }
 
 .main-banner .owl-nav {
@@ -814,7 +818,7 @@ Featured Style
   width: 110px;
   height: 110px;
   line-height: 110px;
-  background-color: #f35525;
+  background-color: #B12D58;
   border-radius: 50%;
   text-align: center;
   position: absolute;
@@ -854,7 +858,7 @@ Featured Style
 }
 
 .featured .accordion-button:not(.collapsed) {
-  color: #f35525;
+  color: #B12D58;
   background-color: #fafafa;
   outline: none;
 }
@@ -944,14 +948,14 @@ Fun Facts Style
 .fun-facts .counter h2 {
   margin-right: 25px;
   font-size: 40px;
-  color: #f35525;
+  color: #B12D58;
 }
 
 .fun-facts .counter:after {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: #f35525;
+  background-color: #B12D58;
   border-radius: 50%;
   content: '';
   right: -25px;
@@ -987,7 +991,7 @@ Best Deal Style
 }
 
 .best-deal .tabs-content .nav-tabs .nav-link.active {
-  background-color: #f35525 !important;
+  background-color: #B12D58 !important;
   color: #fff;
 }
 
@@ -1070,7 +1074,7 @@ Properties Style
 }
 
 .properties .item-moradores {
-  background-color: #78ee88;
+  background-color: #E1A639;
   height: 380px;
 }
 
@@ -1106,7 +1110,7 @@ Properties Style
 .properties .item h6 {
   text-align: center;
   font-size: 25px;
-  color: #f35525;
+  color: #B12D58;
   margin-top: 6px;
   margin-top: 30px;
 }
@@ -1145,13 +1149,15 @@ Config Style
 
 /* 
 ---------------------------------------------
-Config Style ends
+Aviso Style ends
 --------------------------------------------- 
 */
-
+.aviso-details-div{
+  margin-top: 50px;
+}
 /* 
 ---------------------------------------------
-Contact Style
+Aviso Style
 --------------------------------------------- 
 */
 
@@ -1267,7 +1273,7 @@ iframe{
 }
 
 .contact-content #contact-form button:hover {
-  background-color: #f35525;
+  background-color: #B12D58;
 }
 
 
@@ -1384,7 +1390,7 @@ Properties Style
 }
 
 .properties ul.properties-filter li a.is_active {
-  background-color: #f35525;
+  background-color: #B12D58;
   color: #fff;
 }
 
@@ -1393,7 +1399,7 @@ Properties Style
 }
 
 .properties ul.properties-filter li a:hover {
-  color: #f35525;
+  color: #B12D58
 }
 
 .galery-div{
@@ -1461,7 +1467,7 @@ Single Page Style
 }
 
 .single-property .accordion-button:not(.collapsed) {
-  color: #f35525;
+  color: #B12D58;
   background-color: #fafafa;
   outline: none;
 }
@@ -1623,7 +1629,7 @@ Contact Page Style
 }
 
 .contact-page #contact-form button:hover {
-  background-color: #f35525;
+  background-color: #B12D58;
 }
 
 
@@ -1638,6 +1644,11 @@ body {
 }
 
 @media (max-width: 767px) {
+
+  #logo{
+    height: 100px;
+  }
+
   .header-area .main-nav .logo h1 {
     line-height: 80px !important;
   }
@@ -1661,6 +1672,10 @@ body {
 }
 
 @media (max-width: 992px) {
+
+  #logo{
+    height: 100px;
+  }
 
   iframe{
     width: 70vw;
