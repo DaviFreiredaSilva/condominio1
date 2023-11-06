@@ -1,4 +1,5 @@
-from django.shortcuts import render
+import os
+from django.shortcuts import render, redirect
 from .models import Aviso
 
 def index(request):
@@ -32,12 +33,12 @@ def config(request):
 
     return render(request, 'condominio/config.html', context)
 
-def avisoEdit(request):
+def avisoManage(request):
     avisos = Aviso.objects.all()[:10]
 
     if request.method == 'POST':
         titulo = request.POST['titulo']
-        imagem = request.POST['imagem']
+        imagem = request.FILES['imagem']
         texto = request.POST['texto']
 
         aviso = Aviso(
@@ -46,12 +47,12 @@ def avisoEdit(request):
             texto=texto
         )
         aviso.save()
-
+        return redirect('residents')
     context = {
         'avisos':avisos
     }
 
-    return render(request, 'condominio/aviso-edit.html', context)
+    return render(request, 'condominio/aviso-manage.html', context)
 
 def avisoDetails(request, id):
     aviso = Aviso.objects.get(id=id)
@@ -60,3 +61,19 @@ def avisoDetails(request, id):
     }
 
     return render(request, 'condominio/aviso-details.html', context)
+
+def avisoEdit(request, id):
+    aviso = Aviso.objects.get(id=id)
+    context = {
+        'aviso':aviso
+    }
+
+    return render(request, 'condominio/aviso-edit.html', context)
+
+def avisoDelete(request, id):
+    aviso = Aviso.objects.get(id=id)
+    if aviso is not None:
+        os.remove('media/'+str(aviso.imagem))
+        aviso.delete()
+    
+    return redirect('residents')

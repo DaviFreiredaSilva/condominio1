@@ -1,36 +1,28 @@
 {% extends 'condominio/base.html' %}
-{% load static %}
 {% block body %}
-<div class="admin-main-div">
-    <div class="container">
+  <div class="admin-main-div">
+    <div class="properties section">
+      <div class="container">
         <div class="row">
-              <div class="properties section">
-                  <div class="container ">
-                    <div class="row">
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="item item-aviso d-flex flex-column p-4">
-                          <h6>Criar Aviso</h6>
-                          <hr>
-                          <form action="{% url 'avisoEdit' %}" method="POST">
-                            {% csrf_token %}
-                            <div class="form-floating my-3">
-                              <input type="text" name="titulo" id="titulo" class="form-control my-3" placeholder="Título" required>
-                              <label for="titulo">Título</label>
-                            </div>                          
-                            <input type="file" accept="image/*" name="imagem" id="imagem" class="form-control my-3">
-                            <label for="imagem">Imagem(Opcional)</label>
-                            <textarea name="texto" id="texto" class="form-control my-3" cols="30" rows="10" placeholder="Texto do Aviso"></textarea>
-                            <button type="submit" class="btn btn-outline-dark my-3">Salvar</button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>       
-        
+          <div class="col-lg-4 col-md-6 mt-4">
+            <div class="item item-aviso d-flex flex-column p-4">
+              <h6>Editar Aviso</h6>
+              <hr />
+              <form action="{% url 'avisoEdit' aviso.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-floating my-3">
+                  <input type="text" name="titulo" id="titulo" class="form-control my-3" placeholder="Título" required value="{{ aviso.titulo }}" />
+                  <label for="titulo">Título</label>
+                </div>
+                <label for="imagem">Imagem(Opcional)</label>
+                <input type="file" accept="image/*" name="imagem" id="imagem" class="form-control my-3" value="{{ aviso.imagem }}" />
+                <textarea name="texto" id="texto" class="form-control my-3" cols="30" rows="10" placeholder="Texto do Aviso">{{ aviso.texto }}</textarea>
+                <button type="submit" class="btn btn-outline-dark my-3">Salvar</button>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 {% endblock %}

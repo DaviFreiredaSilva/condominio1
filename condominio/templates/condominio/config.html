@@ -1,36 +1,52 @@
 {% extends 'condominio/base.html' %}
 {% load static %}
 {% block body %}
+{% if not user.is_authenticated %}
 
-<div class="admin-main-div">
-    <div class="container">
-        <div class="row">
-            <div class="properties section">
-                <div class="container ">
-                  <div class="row">
+    <div class="container pt-4">
+      <div class="row mt-5 justify-content-center">
+  
+        <div class="col-lg-6 shadow shadow-lg pt-4 ps-4">
+          <div class="section-heading">
+          <h6 class="text-center my-2">ÁREA RESTRITA</h6>
+          <h5 class="text-center">Visível apenas para usuários cadastrados.</h5>
+          <a class="btn btn-dark m-5" href="{% url 'loginUser' %}">Voltar para Login</a>
+        </div>
+             
+        </div>
+     
+  </div>
+
+{% else %}
+    <div class="admin-main-div">
+        <div class="container">
+            <div class="row">
+                <div class="properties section">
+                    <div class="container ">
+                      <div class="row">
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                          <a href="#" class="item item-config shadow-lg border border-dark">
+                            <h6>Cadastrar <br> Moradores</h6>
+                          </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="{% url 'avisoManage'%}" class="item item-config shadow-lg border border-dark">
+                              <h6>Criar e <br> Alterar Avisos</h6>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="#" class="item item-config shadow-lg border border-dark">
+                              <h6>Lista de <br> Moradores</h6>
+                            </a>
+                        </div>
+                        
+                      </div>
+                    </div>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                      <a href="#" class="item item-config shadow-lg border border-dark">
-                        <h6>Cadastrar <br> Moradores</h6>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a href="{% url 'avisoEdit'%}" class="item item-config shadow-lg border border-dark">
-                          <h6>Criar e <br> Alterar Avisos</h6>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <a href="#" class="item item-config shadow-lg border border-dark">
-                          <h6>Lista de <br> Moradores</h6>
-                        </a>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
+            </div>
         </div>
     </div>
-</div>
-
+{% endif %}
 {% endblock  %}

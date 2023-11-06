@@ -16,5 +16,7 @@
             {% endif %}
         </div>
     </div>
+    <hr>
+    <a href="{% url 'avisoDelete' aviso.id %}" class="btn btn-danger ms-5" onclick="confirm('Deseja apagar o aviso?')">Apagar Aviso</a>
    </div>
 {% endblock  %}

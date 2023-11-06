@@ -54,7 +54,17 @@
                       <li><a href="{% url 'index'%}" class=" {% if pagename == 'index' %}active{% endif %} ">Home</a></li>
                       <li><a href="{% url 'residents' %}" class=" {% if pagename == 'residents' %}active{% endif %} ">Moradores</a></li>
                       <li><a href="{% url 'visitors'  %}" class=" {% if pagename == 'visitors' %}active{% endif %} ">Visitantes</a></li>
-                      <li><a href="#" >Login</a></li>
+                      <li>
+                        {% if not user.is_authenticated %}
+                        <a href="{% url 'loginUser' %}" class=" {% if pagename == 'login' %}active{% endif %} ">
+                          Login
+                        </a>
+                        {% else %}
+                        <a href="{% url 'authLogout' %}" class=" {% if pagename == 'login' %}active{% endif %} ">
+                          Logout({{user.username}})
+                        </a>
+                        {% endif %}
+                      </li>
                       <li><a href="{% url 'config' %}" class=" {% if pagename == 'config' %}active{% endif %} "><i class="fa-solid fa-screwdriver-wrench"></i></a></li>
                     </ul>   
                     <a class='menu-trigger'>
