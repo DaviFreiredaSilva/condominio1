@@ -20,22 +20,27 @@
                       <label for="titulo">Título</label>
                     </div>
                     <label for="imagem">Imagem(Opcional)</label>
-                    <input type="file" accept="image/*" name="imagem" id="imagem" class="form-control my-3" />
+                    <input type="file" accept="image/*" name="imagem" id="imagem" class="form-control my-3"/>
                     <textarea name="texto" id="texto" class="form-control my-3" cols="30" rows="10" placeholder="Texto do Aviso"></textarea>
                     <button type="submit" class="btn btn-outline-dark my-3">Salvar</button>
                   </form>
                 </div>
               </div>
               <div class="col-lg-6 col-md-6">
+
                 <div class="item item-aviso d-flex flex-column p-4">
                   <h6>Editar Aviso</h6>
-                  <h5>Clique em um aviso para editar</h5>
-                  <hr />
+                  <h5 class="mb-3">Clique em um aviso para editar</h5>
+                  {% if not avisos %}
+                    <h4 class="text-danger my-4">Sem avisos para exibir...</h4>
+                  {% endif %}
                   <div>
                     {% for aviso in avisos %}
                     <a href="{% url 'avisoEdit' aviso.id %}" class="text-start btn btn-outline-dark my-2 btn-aviso">{{aviso.titulo}}</a>
                     {% endfor %}
                   </div>
+                </div>
+                  
                 </div>
               </div>
             </div>

@@ -18,7 +18,7 @@ def authLogin(request):
             login(request, user)
         else:
             return redirect('authError')
-        return redirect('index')
+        return redirect(request.session['last_page_before_login'])
 
 def authLogout(request):
     logout(request)

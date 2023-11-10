@@ -25,6 +25,9 @@
           <div class="section-heading">
             <h6>Avisos</h6>
             <h4>Clique no aviso para visualizar</h4>
+            {% if not avisos %}
+              <h4 class="text-danger my-4">Sem avisos para exibir...</h4>
+            {% endif %}
           </div>
           <div>
             {% for aviso in avisos %}

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Aviso
 
 def index(request):
-    
+    request.session['last_page_before_login']= 'index'
     context = {
         'pagename': 'index'
     }
@@ -11,6 +11,7 @@ def index(request):
     return render(request, 'condominio/index.html', context)
 
 def residents(request):
+    request.session['last_page_before_login']= 'residents'
     avisos = Aviso.objects.all()[:10]
     context = {
         'pagename': 'residents',
@@ -27,6 +28,7 @@ def visitors(request):
     return render(request, 'condominio/visitors.html', context)
 
 def config(request):
+    request.session['last_page_before_login']= 'config'
     context = {
         'pagename': 'config'
     }
@@ -38,9 +40,12 @@ def avisoManage(request):
 
     if request.method == 'POST':
         titulo = request.POST['titulo']
-        imagem = request.FILES['imagem']
+        if request.FILES:
+            imagem = request.FILES['imagem']
+        else:
+            imagem = None
         texto = request.POST['texto']
-
+        
         aviso = Aviso(
             titulo = titulo,
             imagem=imagem,
@@ -73,7 +78,8 @@ def avisoEdit(request, id):
 def avisoDelete(request, id):
     aviso = Aviso.objects.get(id=id)
     if aviso is not None:
-        os.remove('media/'+str(aviso.imagem))
+        if aviso.imagem:
+            os.remove('media/'+str(aviso.imagem))
         aviso.delete()
     
     return redirect('residents')
